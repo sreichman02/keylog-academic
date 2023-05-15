@@ -4,6 +4,6 @@ an email is sent from the sender to the reciever with a textfile containg the ke
 
 # Running
 In order to run this program, in the command window run
-  python3 main.py sender@gmail.com senderpassword reciever@gmail.com
+  # python3 main.py sender@gmail.com senderpassword reciever@gmail.com
 
 
